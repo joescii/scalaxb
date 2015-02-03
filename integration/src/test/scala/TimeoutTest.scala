@@ -25,10 +25,10 @@ object TimeoutTest extends TestBase with JaxwsTestBase {
   val httpclientsFile = new File(tmp, "httpclients_dispatch0111_timeout.scala")
   copyFileFromResource("httpclients_dispatch0111_timeout.scala", httpclientsFile)
 
-  def requestTimeout: Int = 1
-  def connectionTimeout: Int = 1
-  def serverSleepTime = Duration(3, "seconds") // specs2 has its own Duration
-  def totalTestAwait: Int = 10
+  def requestTimeout: Int = 20
+  def connectionTimeout: Int = 20
+  def serverSleepTime = Duration(30, "seconds") // specs2 has its own Duration
+  def totalTestAwait: Int = 60
 
   "request timeout times out" in {
     (List(s"""import stockquote._
